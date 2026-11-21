@@ -63,9 +63,12 @@ export default function App() {
           <h3>{days[selectedDay].title}</h3>
           <p className="day-desc">{days[selectedDay].description}</p>
           <div className="timeline">
-            <div><time>AM</time><div><strong>Slow start</strong><span>Breakfast, rest and luggage-friendly transfer</span></div></div>
-            <div><time>MID</time><div><strong>Main plan</strong><span>{days[selectedDay].description}</span></div></div>
-            <div><time>PM</time><div><strong>Transport</strong><span>{days[selectedDay].transport}</span></div></div>
+            <div><time>AM</time><div><strong>Morning</strong><span>{days[selectedDay].morning}</span></div></div>
+            <div><time>MID</time><div><strong>Lunch & rest</strong><span>{days[selectedDay].midday}</span></div></div>
+            <div><time>PM</time><div><strong>Evening</strong><span>{days[selectedDay].evening}</span></div></div>
+            <div><time>GO</time><div><strong>Transport</strong><span>{days[selectedDay].transport}</span></div></div>
+            <div><time>KM</time><div><strong>Pace</strong><span>{days[selectedDay].walking}</span></div></div>
+            <div><time>ALT</time><div><strong>Rain / low-energy option</strong><span>{days[selectedDay].alternate}</span></div></div>
           </div>
         </article>
       </section>}
