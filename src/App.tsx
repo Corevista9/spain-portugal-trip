@@ -86,11 +86,11 @@ export default function App() {
         <section className="view">
           <div className="page-heading"><p>TRIP ROOM</p><h2>Our group</h2></div>
           <div className="members">
-            {{
-              'JJ': 'Adult · Organizer',
-              'QQ': 'Dad · Adult',
-              'AA': 'Daughter · 13 · Canadian passport',
-            }.map(([name, detail], i) => (
+            {[
+              ['JJ', 'Adult · Organizer'],
+              ['QQ', 'Dad · Adult'],
+              ['AA', 'Daughter · 13 · Canadian passport'],
+            ].map(([name, detail], i) => (
               <div className="member" key={name}>
                 <span style={{ background: ['#d28d6d', '#829b78', '#b58b78'][i] }}>{name[0]}</span>
                 <div><strong>{name}</strong><small>{detail}</small></div>

@@ -4,16 +4,15 @@
 
 ### BUG-001 — Group-tab member expression fails TypeScript build
 
-- **Status:** Open
+- **Status:** Fixed
 - **Severity:** Blocker
 - **Area:** `src/App.tsx`, Group tab
-- **Symptom:** TypeScript reports `Property 'map' does not exist on type '{ JJ: string; QQ: string; AA: string; }'` at the traveler rendering block.
-- **Suspected cause:** A malformed JSX object expression remains in the Group tab. The intended rendering is an array of `[name, detail]` tuples.
-- **Expected result:** The app renders JJ, QQ, and AA traveler cards and completes `npm run build`.
+- **Symptom:** TypeScript reported `Property 'map' does not exist on type '{ JJ: string; QQ: string; AA: string; }'` at the traveler rendering block.
+- **Root cause:** A JSX object expression was incorrectly using `.map()` instead of an array of `[name, detail]` tuples.
+- **Fix:** Replaced the object expression with an array and mapped the traveler tuples.
 - **Verification:**
-  - Remove or replace the malformed block.
-  - Run `npm run build`.
-  - Confirm no TypeScript or Vite errors.
+  - Ran `npm run build` successfully.
+  - Confirmed no TypeScript or Vite errors.
 
 ## Notes
 
